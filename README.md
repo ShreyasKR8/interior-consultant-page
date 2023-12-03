@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://intskr.netlify.app/">
+    <a href="https://shreyaskr8.github.io/interior-consultant-page/">
       Demo
     </a>
     <span> | </span>
