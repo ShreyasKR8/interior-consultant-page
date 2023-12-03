@@ -14,16 +14,16 @@
     <body>
         <header>
             <p>THIS INTERIOR</p>
-            <ul>
-                <li class='menu'><img src='images/icons8-menu38.svg' class='menu-image' alt='menu'><img src='images/icons8-close.svg' class='menu-close' alt='menu-close-image'>
-                    <ul class='menu-items'>
-                        <li><a class='item-1'href='#'><p>Home</p></a></li>
-                        <li><a href='#'>Collection</a></li>
-                        <li><a href='#'>About</a></li>
-                        <li><a href='#'>Contact</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <img src='images/icons8-menu38.svg' class='menu-image' alt='menu' onclick="openMenu()">
+            <div class="menu">
+                <img src='images/icons8-close.svg' class='menu-close' alt='menu-close-image' onclick="closeMenu()">
+                <ul class='menu-items'>
+                    <li><a href='#' onclick="closeMenu()">Home</a></li>
+                    <li><a href='#' onclick="closeMenu()">Collection</a></li>
+                    <li><a href='#' onclick="closeMenu()">About</a></li>
+                    <li><a href='#' onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </div>
         </header>
         <div class="content-body">
             <div class='content'>
@@ -49,5 +49,6 @@
         <footer>
             <p>created by <a class="footer-username" href="https://github.com/ShreyasKR8">ShreyasKR8</a> - devChallenges.io</p>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>

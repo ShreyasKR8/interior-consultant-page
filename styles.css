@@ -10,7 +10,7 @@
 body {
     background-color: #181719;
     color: #FFFFFF;
-    height: 730px;
+    /* height: 730px; */
 }
 
 header {
@@ -19,7 +19,7 @@ header {
 }
 
 header >p {
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
     border: 1px solid #FFFFFF;
     font-family: 'Crimson Pro', serif;
     font-size: 13px;
@@ -28,73 +28,69 @@ header >p {
     margin-left: 12px;
     height: fit-content; /* weird, Otherwise border gets stretched */
     padding: 10px 8px;
- }
+}
 
-@media only screen and (max-width: 500px) {
+.menu-image {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .menu-image {
+        display: block;
+        margin-top: 20px;
+        margin-right: 8px;
+    }
+
+    .menu-close {
+        position: relative;
+        top: 20px;
+        left: 90%;
+    }
 
     .menu {
-    border: 1px solid #FFFFFF;
-        margin-top: 16px;
+        height: 100%;
+        width: 0%;
         margin-right: 8px;
-        position: relative;
-        list-style: none;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0);
+        transition: 0.5s;
+        overflow-y: hidden;
     }
     
 
     .menu-items {
         display: none;
-
-        visibility: hidden;
-
-        /* position: absolute; */
-        /* list-style: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        font-size: 18px; */
+        list-style: none;
+        position: relative; /* to move self relative to container(menu) */
+        top: 25%;
+        text-align: center;
+        transition: 0.2s; 
     }
 
-    .menu-items li:first-of-type {
-        font-weight: 700;
+    .menu-items a {
+        text-decoration: none;
+        color:#FFFFFF;
+    }
+
+    .menu-items a:active {
         text-decoration: underline;
+        color:#FFFFFF;
     }
 
     .menu-items li {
         margin-bottom: 30px;
     }
 
-    li a {
-        text-decoration: none;
-        color: #FFFFFF;
-    }
-    /* .menu:active .menu-items {
-        position: absolute;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        background-color: #181719;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-        transition: visibility 1s ease;
-        visibility: visible;
-    
-    } */
-    /* .menu-items {
-        position: absolute;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        background-color: #181719;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-    
-    } */
-    
-    .menu-close {
-        background-image: url(images/icons8-close38.svg);
-        z-index: 1000;
-    }
+
+}
+
+.menu-items a:hover {
+    padding-bottom: 10px;
+    text-decoration: underline;
+    color:#FFFFFF;
 }
 
 .content h1 {
@@ -143,21 +139,24 @@ header >p {
 
     /* border: 1px solid red; */
     margin-top: 75px;
-    /* z-index: 2; */
     position: relative;
+    display: flex;
+    justify-content: center;
+
 }
 
 
 .image-container>img {
     /* border: 1px solid red; */
-    margin-left: 12px;
+    text-align: center;
+
     width: 350px;
     height: 240px;
 }
 
 .card {
     /* border: 1px solid red; */
-    position: absolute;
+    position: absolute; /* https://developer.mozilla.org/en-US/docs/Web/CSS/position#description - The element is positioned relative to its closest positioned ancestor (if any) or to the initial containing block. */
     top: 192px;
     left: 63px;
     background-color: #181719;
